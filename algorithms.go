@@ -1,5 +1,7 @@
 package algorithms
 
+import "fmt"
+
 // Subset test if given one element is subset of an array.
 func Subset(first, second []string) bool {
 	set := make(map[string]int)
@@ -8,6 +10,8 @@ func Subset(first, second []string) bool {
 	}
 	for _, value := range first {
 		if count, found := set[value]; !found {
+			fmt.Println(count, found)
+
 			return false
 		} else if count < 1 {
 			return false
